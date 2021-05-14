@@ -30,7 +30,9 @@ body{
     padding-top: 30px;
     text-align: center;
 }
-
+.botoes{
+    padding: 8px 16px;
+}
 .divtitulo{
     text-align:center
 }
