@@ -1,0 +1,37 @@
+* {box-sizing:border-box}
+
+@media screen and (max-width: 639px) {
+
+table { border: 0; }
+
+table thead { display: none; }
+
+table tr {
+  display: block;
+  margin-bottom: .625em;
+}
+
+table td {
+  display: block;
+  font-size: .8em;
+  text-align: left;
+}
+
+table td:before {
+  content: attr(data-label);
+  float: left;
+  font-weight: bold;
+  text-transform: uppercase;
+}
+
+table td:last-child { border-bottom: 0; }
+
+}
+
+ body {
+     background: linear-gradient(rgba(255,255,255,.9), rgba(255,255,255,.9)),  no-repeat center center fixed;
+     -webkit-background-size: cover;
+     -moz-background-size: cover;
+     -o-background-size: cover;
+     background-size: cover;
+ }
