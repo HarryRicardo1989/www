@@ -1,0 +1,115 @@
+@font-face {
+    font-family: 'Digital-7 Mono';
+    src: url('./digital-7mono.ttf') format('truetype');
+}
+body{
+    padding-top:80px;
+    font-family:Arial,Helvetica,sans-serif;
+    background-color:black;
+    /* background-image:url(../img/background-3.jpg); */
+    background-size:cover;
+    background-repeat:no-repeat;
+    background-attachment:fixed
+}
+.divtitulo{
+    position:fixed;
+    top:0;
+    width:100%;
+    height:5%;
+    background-color:rgba(80,80,80,.7);
+    text-align:center
+}
+.titulo{
+    display:inline-block;
+    margin-top: 2%;
+    height:5vh;
+    line-height:5vh;
+    color: darkgrey;
+}
+.titulo h1{
+    font-size:3vh;
+    text-align:center
+}
+.autoajust{
+    text-align:center;
+    grid-template-columns:repeat(auto-fit,minmax(100px,1fr));
+    display:block;
+    margin:2% 2%;
+    /* box-sizing:border-box;
+    box-sizing:content-box;
+    border:grey solid 2px;
+    border-radius:10px;padding-top:5px 
+    background-color:rgba(0,0,0,.75);
+    */
+}
+table{
+    display:inline;
+    text-align:center;
+    margin: auto;
+    
+}
+
+th{
+    border: 3px solid darkblue;
+    color: aquamarine;
+}
+
+td{
+    border: 3px solid darkblue;
+    text-align:center;
+    color:wheat;
+}
+
+footer{
+    position:fixed;
+    bottom:0;
+    width:100%;
+    height:30px;
+    background-color:rgba(0,0,0,.7)
+}
+.copyright{
+    text-align:center;
+    vertical-align:top;
+    color:wheat;
+    font-size:.9em;
+    margin:10px 0 0
+}
+
+  @media screen and (max-width: 65em) {
+    .divtitulo{
+        height:6vh;
+    }
+
+    #logotipo{
+        height:4vh;
+        padding-right:1vh;
+        padding-left:1vh
+    }
+    .titulo{
+        height:3vh;
+        line-height:2vh;
+        font-size:4vh;
+    }
+    .clock{
+        font-size:1vh;
+    }
+  }
+  @media screen and (max-width: 600px) {
+    .divtitulo{
+        height:6vh;
+    }
+
+    #logotipo{
+        height:4vh;
+        padding-right:1vh;
+        padding-left:1vh
+    }
+    .titulo{
+        height:3vh;
+        line-height:2vh;
+        font-size:4vh;
+    }
+    .clock{
+        font-size:1vh;
+    }
+  }
