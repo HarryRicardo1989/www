@@ -2,19 +2,15 @@ var statusNodes = {};
 let nodeList = [];
 //const divPrincipal = document.querySelector("#InicioBlocos");
 document.querySelector(".titulo-principal").textContent = "CRRP SVXReflector Status";
-
-
 function makeList(item, statusNodeItem ){
 
-
-
 }
-
 
 function makePage(){
     var theTable = document.createElement('table');
     let nodeList = [];
-    let nodeListShow = '';
+    thead = document.createElement('thead');
+    tbody = document.createElement('tbody');
     tr = document.createElement('tr');
     tr1 = document.createElement('tr');
     titulo = ["NODE","Transmitting","TalkGroup"]
@@ -26,7 +22,9 @@ function makePage(){
         th[k].appendChild(document.createTextNode(titulo[k]));
         tr1.appendChild(th[k]);
     }
-    theTable.appendChild(tr1);
+
+    thead.appendChild(tr1);
+    theTable.appendChild(thead);
     document.getElementById('InicioBlocos').children
     Object.keys(statusNodes).forEach(item => {
         nodeList.push([item,statusNodes[item]["isTalker"],statusNodes[item]["tg"]])
@@ -34,6 +32,7 @@ function makePage(){
     var tr = [];
     var td = [];
     var nodes = nodeList.length;
+    //console.log(nodes/2)
     for (var i = 0; i < nodes; i++) {
         tr[i] = document.createElement('tr'); 
         var nodesVal = nodeList[i].length;
@@ -42,26 +41,18 @@ function makePage(){
             td[j] = document.createElement('td'); 
             td[j].appendChild(document.createTextNode(nodeStatus[j]));
             tr[i].appendChild(td[j]);
-            
         }
-        
-        theTable.appendChild(tr[i]);
-        
+        tbody.appendChild(tr[i]);
     }
-    
+    theTable.appendChild(tbody);
     document.getElementById('InicioBlocos').replaceChildren(theTable)
     //console.log(theTable.innerHTML)
         
 }
-
-
-
-
-
-
 function atualizaStatus() {
     $.getJSON("/reflectorstatus/statusalltgs", function (reflectorStatusRaw) {
         statusNodes = reflectorStatusRaw["nodes"]
+        
     });
 };
 
@@ -71,3 +62,7 @@ setInterval(function () {
     makePage();
 
 }, 700)
+
+
+
+

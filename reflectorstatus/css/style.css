@@ -3,7 +3,7 @@
     src: url('./digital-7mono.ttf') format('truetype');
 }
 body{
-    padding-top:80px;
+    font-size: 100%;
     font-family:Arial,Helvetica,sans-serif;
     background-color:black;
     /* background-image:url(../img/background-3.jpg); */
@@ -15,15 +15,14 @@ body{
     position:fixed;
     top:0;
     width:100%;
-    height:5%;
+    height:4vh;
     background-color:rgba(80,80,80,.7);
-    text-align:center
+    text-align:center;
+
 }
 .titulo{
     display:inline-block;
-    margin-top: 2%;
-    height:5vh;
-    line-height:5vh;
+    margin-top: 0.4vh;
     color: darkgrey;
 }
 .titulo h1{
@@ -32,9 +31,9 @@ body{
 }
 .autoajust{
     text-align:center;
-    grid-template-columns:repeat(auto-fit,minmax(100px,1fr));
+    grid-template-columns:repeat(auto-fit,minmax(10vh,1fr));
     display:block;
-    margin:2% 2%;
+    margin:5vh;
     /* box-sizing:border-box;
     box-sizing:content-box;
     border:grey solid 2px;
@@ -50,12 +49,13 @@ table{
 }
 
 th{
-    border: 3px solid darkblue;
+    border: 0.4vh solid darkblue;
     color: aquamarine;
+    font-size: 2vh;
 }
 
 td{
-    border: 3px solid darkblue;
+    border: 0.4vh solid darkblue;
     text-align:center;
     color:wheat;
 }
@@ -64,30 +64,25 @@ footer{
     position:fixed;
     bottom:0;
     width:100%;
-    height:30px;
+    height:5vh;
     background-color:rgba(0,0,0,.7)
 }
 .copyright{
     text-align:center;
     vertical-align:top;
     color:wheat;
-    font-size:.9em;
-    margin:10px 0 0
+    font-size: 2vh;
+    margin:2vh 0 0
 }
 
-  @media screen and (max-width: 65em) {
+/*   @media screen and (max-width: 65em) {
     .divtitulo{
-        height:6vh;
+        height:5%;
     }
 
-    #logotipo{
-        height:4vh;
-        padding-right:1vh;
-        padding-left:1vh
-    }
     .titulo{
-        height:3vh;
-        line-height:2vh;
+        height:2%;
+        line-height:2%;
         font-size:4vh;
     }
     .clock{
@@ -96,14 +91,9 @@ footer{
   }
   @media screen and (max-width: 600px) {
     .divtitulo{
-        height:6vh;
+        height:5%;
     }
 
-    #logotipo{
-        height:4vh;
-        padding-right:1vh;
-        padding-left:1vh
-    }
     .titulo{
         height:3vh;
         line-height:2vh;
@@ -112,4 +102,4 @@ footer{
     .clock{
         font-size:1vh;
     }
-  }
+  } */
