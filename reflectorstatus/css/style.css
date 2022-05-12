@@ -32,7 +32,7 @@ body{
 .autoajust{
     text-align:center;
     grid-template-columns:repeat(auto-fit,minmax(10vh,1fr));
-    display:block;
+    display:flexbox;
     margin:5vh;
     /* box-sizing:border-box;
     box-sizing:content-box;
@@ -41,22 +41,27 @@ body{
     background-color:rgba(0,0,0,.75);
     */
 }
+.Blocos{
+    margin: 10px;
+}
+
 table{
     display:inline;
     text-align:center;
-    margin: auto;
+    margin: 2vh;
     
 }
 
 th{
     border: 0.4vh solid darkblue;
     color: aquamarine;
-    font-size: 2vh;
+    font-size: 2.5vh;
 }
 
 td{
     border: 0.4vh solid darkblue;
     text-align:center;
+    font-size: 2vh;
     color:wheat;
 }
 
