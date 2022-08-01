@@ -1,159 +1,193 @@
-body{
-    background-color:rgb(0, 0, 0);
-    background-image:url(../img/foto-CRRP1.jpg);
-    background-size:cover;
-    background-repeat:no-repeat;
-    background-attachment:fixed;
-}
-.center{
-    text-align: center;
-}
-#logotipo-CRRP {
-    height: 15em;
-    display:block;
-    float: left;
-}
-#logotipo-PX{
-    height: 10em;
-    display:block;
-    float: right;    
+body {
+    background-color: rgb(0, 0, 0);
+    background-image: url(../img/foto-CRRP1.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
 }
 
-#clock{
+.center {
+    text-align: center;
+}
+
+#logotipo-CRRP {
+    height: 15em;
+    display: block;
+    float: left;
+}
+
+#logotipo-PX {
+    height: 10em;
+    display: block;
+    float: right;
+}
+
+#clock {
     text-align: center;
     display: inline-block;
-    color:rgba(14, 255, 66, 0.7);
+    color: rgba(14, 255, 66, 0.7);
     font-family: 'Digital-7 Mono';
-    font-size:2rem;
+    font-size: 2rem;
 }
+
 .buttons {
     padding-top: 30px;
     text-align: center;
 }
-.botoes{
-    padding: 8px 16px;
+
+.botoes {
+    padding: 16px 16px;
+    margin-bottom: 20px;
 }
-.divtitulo{
-    text-align:center
+
+.divtitulo {
+    text-align: center
 }
 
 
-.titulo{
-    display:inline-block;
+.titulo {
+    display: inline-block;
     padding-top: 40px;
-    color:lightgray;
-    font-size:25px;
-    
+    color: lightgray;
+    font-size: 25px;
+
 }
 
 .box {
 
-    background-color:rgba(0,0,0,.40);
-    border-radius:10px;
+    background-color: rgba(0, 0, 0, 0.6);
+    border-radius: 10px;
     box-sizing: border-box;
     margin: 2px;
     padding: 5px;
     display: inline-block;
 
 }
-.contato h1{
+
+.contato h1 {
     text-transform: uppercase;
-    text-align:center;
-    color:lightgray;
-    font-size:1em;
-    display:inline-block;
-    vertical-align:top;
-
+    text-align: center;
+    color: lightgray;
+    font-size: 1em;
+    display: inline-block;
+    vertical-align: top;
 }
 
-footer{
-    position:fixed;
-    bottom:1px;
-    width:100%;
-    height:30px;
-    background-color:rgba(0,0,0,.7)
-}
-.copyright{
-    text-align:center;
-    vertical-align:top;
-    color:wheat;
-    font-size:.9em;
-    margin:10px 0 0;
+h2 {
+    text-transform: uppercase;
+    text-align: center;
+    color: rgb(185, 214, 116);
+    font-size: 1em;
+    display: inline-block;
+    vertical-align: top;
 }
 
-  @media screen and (max-width: 65em) {
-    .divtitulo{
-        height:6vh;
+p {
+    text-align: center;
+    color: rgb(163, 214, 116);
+    font-size: 1em;
+    display: inline-block;
+    vertical-align: top;
+}
+
+footer {
+    position: fixed;
+    bottom: 1px;
+    width: 100%;
+    height: 30px;
+    background-color: rgba(0, 0, 0, .7)
+}
+
+.copyright {
+    text-align: center;
+    vertical-align: top;
+    color: wheat;
+    font-size: .9em;
+    margin: 10px 0 0;
+}
+
+@media screen and (max-width: 65em) {
+    .divtitulo {
+        height: 6vh;
     }
 
     #logotipo-CRRP {
         height: 6em;
-        display:block;
+        display: block;
         float: left;
     }
-    #logotipo-PX{
+
+    #logotipo-PX {
         height: 4em;
-        display:block;
-        float: right;    
+        display: block;
+        float: right;
     }
-    .titulo{
-        height:3vh;
-        line-height:2vh;
-        font-size:4vh;
+
+    .titulo {
+        height: 3vh;
+        line-height: 2vh;
+        font-size: 4vh;
     }
-    .clock{
-        font-size:1vh;
+
+    .clock {
+        font-size: 1vh;
     }
-  }
-  @media screen and (max-width: 600px) {
-    body{
-        background-color:rgb(0, 0, 0);
-        background-image:url(../img/foto-CRRP1.jpg);
-        background-size:auto;
-        background-repeat:no-repeat;
-        background-attachment:fixed;
+}
+
+@media screen and (max-width: 600px) {
+    body {
+        background-color: rgb(0, 0, 0);
+        background-image: url(../img/foto-CRRP1.jpg);
+        background-size: auto;
+        background-repeat: no-repeat;
+        background-attachment: fixed;
         background-position: center;
     }
-    .divtitulo{
-        height:3vh;
+
+    .divtitulo {
+        height: 3vh;
     }
+
     #logotipo-CRRP {
         height: 5em;
-        display:block;
+        display: block;
         float: left;
     }
-    #logotipo-PX{
+
+    #logotipo-PX {
         height: 4em;
-        display:block;
-        float: right;    
+        display: block;
+        float: right;
     }
+
     .buttons {
         padding-top: 60px;
         text-align: center;
     }
-    
-    .titulo{
-        padding-top: 10px;
-        height:3vh;
-        line-height:5vh;
-        font-size:3vh;
-    }
-    .clock{
-        font-size:0.5rem;
-    }
-    .contato h1{
-        text-align:center;
-        font-size:10px;
-        padding:2px
 
-        
+    .titulo {
+        padding-top: 10px;
+        height: 3vh;
+        line-height: 5vh;
+        font-size: 3vh;
     }
-    footer{
-        position:fixed;
-        bottom:1px;
+
+    .clock {
+        font-size: 0.5rem;
+    }
+
+    .contato h1 {
+        text-align: center;
+        font-size: 10px;
+        padding: 2px
+    }
+
+    footer {
+        position: fixed;
+        bottom: 1px;
         padding-bottom: 10px;
-        width:100%;
-        height:30px;
-        background-color:rgba(0,0,0,.7)
+        width: 100%;
+        height: 30px;
+        background-color: rgba(0, 0, 0, .7)
     }
-  }
+}
