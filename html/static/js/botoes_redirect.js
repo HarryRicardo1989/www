@@ -1,5 +1,5 @@
 document.getElementById("botao-SVX").onclick = function () {
-    location.href = "http://crrp.org.br/crrp-svx";
+    location.href = "http://crrp.org.br/svxlink";
 };
 
 document.getElementById("CRRP-Institucional").onclick = function () {

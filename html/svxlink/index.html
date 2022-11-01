@@ -10,18 +10,18 @@
     <!-- <link rel="icon" href="./img/favicon.svg" type="image/x-icon"> -->
 
     <title>Reflector Status</title>
-    <script language="javascript"> 
-        function setCookie(nome, valor, dias){ 
-        diasms = (new Date()) .getTime() + 1000 * 3600 * 24 * dias; 
-        dias = new Date(diasms); 
-        expires = dias.toGMTString(); 
-        document.cookie = escape(nome) + "=" + escape(valor) + "; expires=" + expires; 
+    <script language="javascript">
+        function setCookie(nome, valor, dias) {
+            diasms = (new Date()).getTime() + 1000 * 3600 * 24 * dias;
+            dias = new Date(diasms);
+            expires = dias.toGMTString();
+            document.cookie = escape(nome) + "=" + escape(valor) + "; expires=" + expires;
         } 
-        </script>
+    </script>
 </head>
 
 <body id="body">
-    
+
     <header class="divtitulo">
         <div class="titulo">
             <h1 class="titulo-principal"></h1>
@@ -33,22 +33,22 @@
         </div>
     </main>
     <footer>
- 
+
         <p class="copyright">CRRP &copy; 2022
             <script language="javascript">
-                if (!document.cookie){
-                setCookie("cookie", "1", 365);
-                document.write("<font face='verdana' size='1'>Visitas : 1</font>");
+                if (!document.cookie) {
+                    setCookie("cookie", "1", 365);
+                    document.write("<font face='verdana' size='1'>Visitas : 1</font>");
                 } else {
-                var cont = document.cookie;
-                var dividindo = cont.split("=");
-                //document.write(dividindo[1]);
-                var numero = parseInt(dividindo[1]);
-                var soma = numero + 1;
-                document.write("<font class='copyright' face='verdana' size='1'>Visitas : " + soma + "</font>");
-                setCookie("cookie", soma, 365);
+                    var cont = document.cookie;
+                    var dividindo = cont.split("=");
+                    //document.write(dividindo[1]);
+                    var numero = parseInt(dividindo[1]);
+                    var soma = numero + 1;
+                    document.write("<font class='copyright' face='verdana' size='1'>Visitas : " + soma + "</font>");
+                    setCookie("cookie", soma, 365);
                 }
-                </script> 
+            </script>
         </p>
     </footer>
     </div>
