@@ -6,8 +6,6 @@ document.getElementById("CRRP-Institucional").onclick = function () {
     location.href = "http://casadoradioamador.org.br";
 };
 
-document.getElementById("botao-PY2KAK").onclick = function () {
-    location.href = "http://crrp.org.br/py2kak";
+document.getElementById("CRRP-VPNLIST").onclick = function () {
+    location.href = "http://crrp.org.br/vpnlist";
 };
-
-
