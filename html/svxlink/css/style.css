@@ -1,110 +1,70 @@
-@font-face {
-    font-family: 'Digital-7 Mono';
-    src: url('./digital-7mono.ttf') format('truetype');
-}
-body{
-    font-size: 100%;
-    font-family:Arial,Helvetica,sans-serif;
-    background-color:black;
-    /* background-image:url(../img/background-3.jpg); */
-    background-size:cover;
-    background-repeat:no-repeat;
-    background-attachment:fixed
-}
-.divtitulo{
-    position:fixed;
-    top:0;
-    width:100%;
-    height:4vh;
-    background-color:rgba(80,80,80,.7);
-    text-align:center;
-
-}
-.titulo{
-    display:inline-block;
-    margin-top: 0.4vh;
-    color: darkgrey;
-}
-.titulo h1{
-    font-size:3vh;
-    text-align:center
-}
-.autoajust{
-    text-align:center;
-    grid-template-columns:repeat(auto-fit,minmax(10vh,1fr));
-    display:flexbox;
-    margin:5vh;
-    /* box-sizing:border-box;
-    box-sizing:content-box;
-    border:grey solid 2px;
-    border-radius:10px;padding-top:5px 
-    background-color:rgba(0,0,0,.75);
-    */
-}
-.Blocos{
-    margin: 10px;
+body {
+    font-family: Arial, sans-serif;
+    font-size: 16px;
+    background-color: #1a1a1a;
+    color: #fff;
+    margin: 0;
+    padding: 0;
 }
 
-table{
-    display:inline;
-    text-align:center;
-    margin: 2vh;
-    
+.header {
+    background-color: #333;
+    padding: 20px;
+    text-align: center;
+    margin-bottom: 20px;
 }
 
-th{
-    border: 0.4vh solid darkblue;
-    color: aquamarine;
-    font-size: 2.5vh;
+.title {
+    color: #fff;
+    font-size: 24px;
+    margin: 0;
 }
 
-td{
-    border: 0.4vh solid darkblue;
-    text-align:center;
-    font-size: 2vh;
-    color:wheat;
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    margin: 0 auto;
+    max-width: 800px;
 }
 
-footer{
-    position:fixed;
-    bottom:0;
-    width:100%;
-    height:5vh;
-    background-color:rgba(0,0,0,.7)
-}
-.copyright{
-    text-align:center;
-    vertical-align:top;
-    color:wheat;
-    font-size: 2vh;
-    margin:2vh 0 0
+table {
+    border-collapse: collapse;
+    width: 100%;
+    background-color: #333;
+    border-radius: 4px;
+    margin-bottom: 20px;
 }
 
-/*   @media screen and (max-width: 65em) {
-    .divtitulo{
-        height:5%;
+th {
+    background-color: #222;
+    color: #fff;
+    padding: 12px;
+    text-align: center;
+}
+
+td {
+    padding: 12px;
+    text-align: center;
+}
+
+tbody tr:nth-child(even) {
+    background-color: #292929;
+}
+
+.footer-text {
+    text-align: center;
+    color: #fff;
+    font-size: 14px;
+    padding: 20px;
+    margin: 0;
+    background-color: #292929;
+}
+
+/* Adicionado CSS para tornar o layout responsivo */
+@media screen and (max-width: 600px) {
+    .container {
+        padding: 0 10px;
     }
-
-    .titulo{
-        height:2%;
-        line-height:2%;
-        font-size:4vh;
-    }
-    .clock{
-        font-size:1vh;
-    }
-  }
-  @media screen and (max-width: 600px) {
-    .divtitulo{
-        height:5%;
-    }
-
-    .titulo{
-        height:3vh;
-        line-height:2vh;
-        font-size:4vh;
-    }
-    .clock{
-        font-size:1vh;
-    }
-  } */
+}

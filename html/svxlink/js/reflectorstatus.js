@@ -1,106 +1,83 @@
-var theadList = ["NODE","Transmitting","TalkGroup"];
-document.querySelector(".titulo-principal").textContent = "CRRP SVXReflector Status";
+var theadList = ["NODE", "Transmitting", "TalkGroup"];
 
-function makeThead(array){
-    let th = [];
-    let tr = [];
-    let h2 = [];
-    let titulosLength = array.length;
-    thead = document.createElement('thead');
-    tr = document.createElement('tr');
-    
-    for (let k = 0 ; k < titulosLength; k++) {
-        h2[k] = document.createElement('h2'); 
-        th[k] = document.createElement('th'); 
-        h2[k].appendChild(document.createTextNode(array[k]));
-        th[k].appendChild(h2[k]);
-        tr.appendChild(th[k]);
-    }
+window.addEventListener('DOMContentLoaded', function () {
+    document.querySelector(".title").textContent = "CRRP SVXReflector Status";
+});
 
+function createTable(data) {
+    var table = document.createElement('table');
+    table.classList.add("table");
+
+    var thead = document.createElement('thead');
+    var tr = document.createElement('tr');
     thead.appendChild(tr);
-    return thead;
-}
 
-function makeTbody(array){
-    let tr = [];
-    let td = [];
-    let h3 = [];
-    tbody = document.createElement('tbody');
-    let nodes = array.length;
-    for (let i = 0; i < nodes; i++) {
-        tr[i] = document.createElement('tr'); 
-        let nodesVal = array[i].length;
-        nodeStatus = array[i];
-        for (let j = 0 ; j < nodesVal; j++) {
-            h3[j] = document.createElement('h3'); 
-            td[j] = document.createElement('td'); 
-            h3[j].appendChild(document.createTextNode(nodeStatus[j]));
-            td[j].appendChild(h3[j]);
-            tr[i].appendChild(td[j]);
-        }
-        tbody.appendChild(tr[i]);
-    }
-    return tbody;
-}
-
-function makeNodeList(objNodes){
-    let nodeList = [];
-    Object.keys(objNodes).forEach(element => {
-        nodeList.push([element,objNodes[element]["isTalker"],objNodes[element]["tg"]]);
+    theadList.forEach(function (title) {
+        var th = document.createElement('th');
+        th.textContent = title;
+        tr.appendChild(th);
     });
 
-    return nodeList;
-}
+    var tbody = document.createElement('tbody');
 
-function makeTables(tHead,tBody){
-    table = document.createElement('table');
-    table.classList.add("Blocos");
-    table.appendChild(tHead);
-    table.appendChild(tBody);
+    data.forEach(function (item) {
+        var tr = document.createElement('tr');
+
+        item.forEach(function (value, index) {
+            var td = document.createElement('td');
+            if (index === 1) {
+                td.textContent = value ? "Talking" : "Idle";
+            } else {
+                td.textContent = value;
+            }
+            tr.appendChild(td);
+        });
+
+        tbody.appendChild(tr);
+    });
+
+    table.appendChild(thead);
+    table.appendChild(tbody);
 
     return table;
 }
 
-function makeDiv(array){
-    div1 = [];
-    div = document.createElement('div');
-    
-    let arrayLength = array.length;
-    for (let i = 0 ; i < arrayLength; i++) {
-        div.appendChild(array[i]);
+function createPage(data) {
+    var container = document.getElementById('InicioBlocos');
+    container.innerHTML = '';
+    container.appendChild(createTable(data));
+}
+
+function getCookie(name) {
+    var cookies = document.cookie.split("; ");
+    for (var i = 0; i < cookies.length; i++) {
+        var cookie = cookies[i].split("=");
+        if (cookie[0] === name) {
+            return cookie[1];
+        }
     }
-
-    return div;
+    return "";
 }
 
-function makePage(objRawNodes){
-    nodeList = makeNodeList(objRawNodes);
-    nodeListlength = nodeList.length;
-    metadeNodeList = Math.floor(nodeListlength/2);
-    primeiraMetade = metadeNodeList+(nodeListlength%2);
-    newNodeList1 = nodeList.slice(0,primeiraMetade);
-    newNodeList2 = nodeList.slice(primeiraMetade,nodeListlength);
-
-    table1 = makeTables(makeThead(theadList),makeTbody(newNodeList1));
-    table2 = makeTables(makeThead(theadList),makeTbody(newNodeList2));
-    div = makeDiv([table1, table2]);
-
-    document.getElementById('InicioBlocos').replaceChildren(div);
-        
+function updateVisits() {
+    var cookie = getCookie("cookie");
+    var visits = cookie ? parseInt(cookie) + 1 : 1;
+    document.cookie = "cookie=" + visits + "; expires=365";
+    var visitsElement = document.getElementById("visits");
+    if (visitsElement) {
+        visitsElement.textContent = "Visits: " + visits;
+    }
 }
+
 function atualizaStatus() {
     $.getJSON("/reflectorstatus/statusalltgs", function (reflectorStatusRaw) {
-        makePage(reflectorStatusRaw["nodes"]);
+        var nodes = reflectorStatusRaw["nodes"];
+        var nodeList = Object.entries(nodes).map(function ([node, info]) {
+            return [node, info["isTalker"], info["tg"]];
+        });
+        createPage(nodeList);
     });
-};
+    updateVisits();
+}
 
-
-setInterval(function () {
-    atualizaStatus();
-    
-
-}, 700)
-
-
-
-
+setInterval(atualizaStatus, 700);
