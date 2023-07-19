@@ -1,5 +1,4 @@
 // script.js
-
 window.addEventListener('DOMContentLoaded', () => {
     const vpnTable = document.getElementById('vpnTable');
     const currentYear = document.getElementById('currentYear');
@@ -9,9 +8,14 @@ window.addEventListener('DOMContentLoaded', () => {
 
     // Função para atualizar a tabela
     const atualizarTabela = () => {
-        fetch('/vpnjson')
+        //console.log('Obtendo dados do servidor...');
+
+        fetch('/vpnjson', {
+            cache: 'no-cache' // Adiciona o cabeçalho Cache-Control: no-cache
+        })
             .then(response => response.json())
             .then(data => {
+                //console.log('Dados recebidos:', data);
                 // Limpa o conteúdo atual da tabela
                 vpnTable.innerHTML = '';
 
