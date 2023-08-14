@@ -1,48 +1,60 @@
+/* Reset padrão */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
 body {
-    background-color: rgb(0, 0, 0);
+    background-color: #0a0a0a;
     background-image: url(../img/foto-CRRP1.jpg);
     background-size: cover;
-    background-repeat: no-repeat;
     background-attachment: fixed;
+    font-family: Arial, sans-serif;
+    color: white;
 }
 
-.center {
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+}
+
+.logo {
+    height: 100px;
+    object-fit: contain;
+}
+
+.title {
     text-align: center;
-}
-
-#logotipo-CRRP {
-    height: 15em;
-    display: block;
-    float: left;
-}
-
-#logotipo-PX {
-    height: 10em;
-    display: block;
-    float: right;
-}
-
-#clock {
-    text-align: center;
-    display: inline-block;
-    color: rgba(14, 255, 66, 0.7);
-    font-family: 'Digital-7 Mono';
+    margin: 20px 0;
     font-size: 2rem;
+    color: #b9d672;
 }
 
-.buttons {
-    padding-top: 30px;
-    text-align: center;
+.buttons-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 20px;
 }
 
 .botoes {
-    padding: 16px 16px;
+    padding: 10px 20px;
     border: none;
-    border-radius: 20px;
+    border-radius: 30px;
     color: white;
     font-weight: bold;
     cursor: pointer;
-    margin-bottom: 10px;
+    transition: background-color 0.3s;
 }
 
 .botao-verde {
@@ -57,145 +69,67 @@ body {
     background-color: #f3b400;
 }
 
-.divtitulo {
-    text-align: center
+.logs-title {
+    text-align: center;
+    margin: 20px auto;
+    /* Adicione 'auto' para centralizar horizontalmente */
+    font-size: 1.5rem;
+    color: #b9d672;
+    position: relative;
+    padding: 10px 30px;
+    /* Ajuste o valor do padding conforme necessário */
+    background-color: rgba(0, 0, 0, 0.5);
+    border-radius: 10px;
+    max-width: 30%;
+    /* Defina um valor para controlar a largura máxima da tarja */
 }
 
-.titulo {
-    display: inline-block;
-    padding-top: 40px;
-    color: lightgray;
-    font-size: 25px;
+.logs-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    margin-bottom: 30px;
 }
 
 .box {
-    background-color: rgba(0, 0, 0, 0.6);
+    background-color: rgba(0, 0, 0, 0.8);
     border-radius: 10px;
-    box-sizing: border-box;
-    margin: 2px;
-    padding: 5px;
-    display: inline-block;
+    padding: 20px;
+    margin: 10px;
 }
 
-.contato h1 {
-    text-transform: uppercase;
+.footer {
+    background-color: rgba(0, 0, 0, 0.7);
     text-align: center;
-    color: lightgray;
-    font-size: 1em;
-    display: inline-block;
-    vertical-align: top;
-}
-
-h2 {
-    text-transform: uppercase;
-    text-align: center;
-    color: rgb(185, 214, 116);
-    font-size: 1em;
-    display: inline-block;
-    vertical-align: top;
-}
-
-p {
-    text-align: center;
-    color: rgb(163, 214, 116);
-    font-size: 1em;
-    display: inline-block;
-    vertical-align: top;
-}
-
-footer {
-    position: fixed;
-    bottom: 1px;
+    padding: 10px;
+    position: absolute;
+    bottom: 0;
     width: 100%;
-    height: 30px;
-    background-color: rgba(0, 0, 0, .7)
 }
 
-@media screen and (max-width: 65em) {
-    .divtitulo {
-        height: 6vh;
+/* Media Queries */
+
+@media screen and (max-width: 768px) {
+    .header {
+        flex-direction: column;
+        text-align: center;
     }
 
-    #logotipo-CRRP {
-        height: 6em;
-        display: block;
-        float: left;
+    .logo {
+        margin-bottom: 10px;
     }
 
-    #logotipo-PX {
-        height: 4em;
-        display: block;
-        float: right;
+    .title {
+        font-size: 1.5rem;
     }
 
-    .titulo {
-        height: 3vh;
-        line-height: 2vh;
-        font-size: 4vh;
-    }
-
-    .clock {
-        font-size: 1vh;
-    }
-}
-
-@media screen and (max-width: 600px) {
-    body {
-        background-color: rgb(0, 0, 0);
-        background-image: url(../img/foto-CRRP1.jpg);
-        background-size: auto;
-        background-repeat: no-repeat;
-        background-attachment: fixed;
-        background-position: center;
-    }
-
-    .divtitulo {
-        height: 3vh;
-    }
-
-    #logotipo-CRRP {
-        height: 5em;
-        display: block;
-        float: left;
-    }
-
-    #logotipo-PX {
-        height: 4em;
-        display: block;
-        float: right;
-    }
-
-    .buttons {
-        display: flex;
+    .buttons-container,
+    .logs-buttons {
         flex-direction: column;
         align-items: center;
-        padding-top: 30px;
-        text-align: center;
     }
 
-    .titulo {
-        padding-top: 10px;
-        height: 3vh;
-        line-height: 5vh;
-        font-size: 3vh;
-    }
-
-    .clock {
-        font-size: 0.5rem;
-    }
-
-    .contato h1 {
-        text-align: center;
-        font-size: 10px;
-        padding: 2px
-    }
-
-    footer {
-        position: fixed;
-        bottom: 1px;
-        padding-bottom: 10px;
-        width: 100%;
-        height: 30px;
-        background-color: rgba(0, 0, 0, .7)
+    .footer {
+        position: relative;
     }
 }
