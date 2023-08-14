@@ -8,10 +8,8 @@ if (currentYearElement) {
 
 function updateLogContainer(container, log) {
     const scrollToEnd = container.scrollTop === container.scrollHeight - container.clientHeight;
-    const titleElement = container.querySelector('.logs-title');
-    container.innerHTML = '';
-    container.appendChild(titleElement); // Adicione o título de volta
-    container.insertAdjacentHTML('beforeend', log);
+    const logsElement = container.querySelector('.logs');
+    logsElement.innerHTML = log;
     if (scrollToEnd) {
         container.scrollTop = container.scrollHeight - container.clientHeight;
     }
@@ -34,12 +32,12 @@ function formatLog(log) {
 }
 
 function connectToSSE() {
-    const eventSource = new EventSource('/api/sse');
+    const eventSource = new EventSource('/log/py2kar/sse');
 
     eventSource.onmessage = event => {
-        const { log, index } = JSON.parse(event.data);
+        const { log } = JSON.parse(event.data);
         const formattedLog = formatLog(log);
-        updateLogContainer(logsContainers[index], formattedLog);
+        updateLogContainer(logsContainers[0], formattedLog); // Assume there's only one container
     };
 
     eventSource.onerror = () => {
@@ -49,13 +47,11 @@ function connectToSSE() {
 }
 
 function loadInitialLogs() {
-    fetch('/api/logs')
-        .then(response => response.json())
+    fetch('/log/py2kar')
+        .then(response => response.text()) // Use text() instead of json()
         .then(data => {
-            data.forEach((log, index) => {
-                const formattedLog = formatLog(log);
-                updateLogContainer(logsContainers[index], formattedLog);
-            });
+            const formattedLog = formatLog(data);
+            updateLogContainer(logsContainers[0], formattedLog); // Assume there's only one container
             connectToSSE();
         });
 }
